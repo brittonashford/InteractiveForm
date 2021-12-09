@@ -108,7 +108,7 @@ function isValidName(nameVal) {
 
 //verify email address is not blank and contains "@" and ".com"
 function isValidEmail(emailVal) {
-    const isValid = emailVal === '' && /^[^@]+\@[^@.]+\.com$/i.test(emailVal);
+    const isValid = /^[^@]+\@[^@.]+\.com$/i.test(emailVal);
     (isValid) ? noHint(email) : showHint(email);
 
     return isValid;
@@ -124,7 +124,7 @@ function isValidEvents() {
 
 //verify credit card # is 13-16 digits
 function isValidCreditCard(ccVal) {
-    const isValid = /^(\d{13,16})$/.test(ccVal.value);
+    const isValid = /\b\d{13,16}\b/.test(ccVal);
     (isValid) ? noHint(cardNum) : showHint(cardNum);
 
     return isValid;
