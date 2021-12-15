@@ -168,26 +168,28 @@ form.addEventListener('submit', e => {
         e.preventDefault();
     }
 
-//only check the following three values if credit card info is slected/visibile
-    const cardNumVal = cardNum.value;
-    const validCardNum = isValidCreditCard(cardNumVal);
+    //only check the following three values if credit card info is selected/visibile
+    if (selectedPayMethod === 'credit-card') {
+        const cardNumVal = cardNum.value;
+        const validCardNum = isValidCreditCard(cardNumVal);
 
-    if (!validCardNum && cardNum.style.display === '') {
-        e.preventDefault();
-    }
+        if (!validCardNum) {
+            e.preventDefault();
+        }
 
-    const zipVal = zip.value;
-    const validZip = isValidZip(zipVal);
+        const zipVal = zip.value;
+        const validZip = isValidZip(zipVal);
 
-    if (!validZip && cardNum.style.display === '') {
-        e.preventDefault();
-    }
+        if (!validZip) {
+            e.preventDefault();
+        }
 
-    const cvvVal = cvv.value;
-    const validCVV = isValidCVV(cvvVal);
+        const cvvVal = cvv.value;
+        const validCVV = isValidCVV(cvvVal);
 
-    if (!validCVV && cardNum.style.display === '') {
-        e.preventDefault();
+        if (!validCVV) {
+            e.preventDefault();
+        }
     }
 })
 
