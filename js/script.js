@@ -69,26 +69,30 @@ const creditCard = document.querySelector('#credit-card');
 const payPal = document.querySelector('#paypal');
 const bitcoin = document.querySelector('#bitcoin');
 
-creditCard.hidden = false;
-payPal.hidden = true;
-bitcoin.hidden = true;
+creditCard.style.display = '';
+paypal.style.display = 'none'
+bitcoin.style.display = 'none'
 payMethod[1].setAttribute('selected', true);
 
 //visibilty logic for paymnet methods. credit card is default
 payMethod.addEventListener('change', e => {
     const selectedPayMethod = e.target.value;
+
     if (selectedPayMethod === 'paypal') {
-        creditCard.hidden = true;
-        bitcoin.hidden = true;
-        paypal.hidden = false;
+        creditCard.style.display = 'none';
+        bitcoin.style.display = 'none';
+        paypal.style.display = '';
+
     } else if (selectedPayMethod === 'credit-card') {
-        creditCard.hidden = false;
-        bitcoin.hidden = true;
-        paypal.hidden = true;
+        creditCard.style.display = '';
+        bitcoin.style.display = 'none';
+        paypal.style.display = 'none';
+
     } else if (selectedPayMethod === 'bitcoin') {
-        creditCard.hidden = true;
-        bitcoin.hidden = false;
-        paypal.hidden = true;
+        creditCard.style.display = 'none';
+        bitcoin.style.display = '';
+        paypal.style.display = 'none';     
+
     }          
 });
 
@@ -169,25 +173,25 @@ form.addEventListener('submit', e => {
     }
 
     //only check the following three values if credit card info is selected/visibile
-    if (selectedPayMethod === 'credit-card') {
+    if (payMethod.value === 'credit-card') {
         const cardNumVal = cardNum.value;
         const validCardNum = isValidCreditCard(cardNumVal);
 
-        if (!validCardNum) {
+        if (creditCard.style.display === '' && !validCardNum) {
             e.preventDefault();
         }
 
         const zipVal = zip.value;
         const validZip = isValidZip(zipVal);
 
-        if (!validZip) {
+        if (creditCard.style.display === '' && !validZip) {
             e.preventDefault();
         }
 
         const cvvVal = cvv.value;
         const validCVV = isValidCVV(cvvVal);
 
-        if (!validCVV) {
+        if (creditCard.style.display === '' && !validCVV) {
             e.preventDefault();
         }
     }
@@ -197,7 +201,7 @@ form.addEventListener('submit', e => {
 function showHint(element) {
     element.parentElement.classList.add('not-valid');
     element.parentElement.classList.remove('valid');
-    element.parentElement.lastElementChild.style.display = 'block';
+    element.parentElement.lastElementChild.style.display = '';
 }
 function noHint(element) {
     element.parentElement.classList.add('valid');
