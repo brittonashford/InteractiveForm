@@ -70,7 +70,7 @@ const payPal = document.querySelector('#paypal');
 const bitcoin = document.querySelector('#bitcoin');
 
 creditCard.style.display = '';
-paypal.style.display = 'none'
+payPal.style.display = 'none'
 bitcoin.style.display = 'none'
 payMethod[1].setAttribute('selected', true);
 
@@ -81,17 +81,17 @@ payMethod.addEventListener('change', e => {
     if (selectedPayMethod === 'paypal') {
         creditCard.style.display = 'none';
         bitcoin.style.display = 'none';
-        paypal.style.display = '';
+        payPal.style.display = '';
 
     } else if (selectedPayMethod === 'credit-card') {
         creditCard.style.display = '';
         bitcoin.style.display = 'none';
-        paypal.style.display = 'none';
+        payPal.style.display = 'none';
 
     } else if (selectedPayMethod === 'bitcoin') {
         creditCard.style.display = 'none';
         bitcoin.style.display = '';
-        paypal.style.display = 'none';     
+        payPal.style.display = 'none';     
 
     }          
 });
