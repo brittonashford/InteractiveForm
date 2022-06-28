@@ -3,14 +3,18 @@ name.focus();
 
 const jobRole = document.querySelector('#title');
 const otherJobRole = document.querySelector('#other-job-role');
+const otherJobRoleLabel = document.querySelector('#other-job-role-label');
 otherJobRole.style.display = 'none';
+otherJobRoleLabel.style.display = 'none';
 
 jobRole.addEventListener('change', e => {
     if (e.target.value === "other") {
         otherJobRole.style.display = 'block';
+        otherJobRoleLabel.style.display = 'block';
     } else {
         otherJobRole.value = '';
         otherJobRole.style.display = 'none';
+        otherJobRoleLabel.style.display = 'none';
     }
 })
 
@@ -201,11 +205,13 @@ form.addEventListener('submit', e => {
 function showHint(element) {
     element.parentElement.classList.add('not-valid');
     element.parentElement.classList.remove('valid');
-    element.parentElement.lastElementChild.style.display = '';
+    console.log(element.parentElement.lastElementChild);
+    element.parentElement.lastElementChild.style.display = 'block';
 }
 function noHint(element) {
     element.parentElement.classList.add('valid');
     element.parentElement.classList.remove('not-valid');
+    console.log(element.parentElement.lastElementChild);
     element.parentElement.lastElementChild.style.display = 'none';
 }
 

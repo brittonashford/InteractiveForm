@@ -212,12 +212,13 @@ button:hover {
 .activities.valid::after, .activities.not-valid::after {
     top: 5px;
 }
-/* ================================= Basic info and t shirt styles ==================================== */
-.basic-info-and-shirt-box {
+/* ================================= Basic info styles ==================================== */
+.basic-info-box {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     max-width: 100%;
+    padding: 15px;
 
 }
 .basic-info {
@@ -225,6 +226,21 @@ button:hover {
     flex-flow: column;
     justify-content: space-between;
     margin: 8px auto;
+}
+
+.basic-info{
+    padding: 0;
+    width: 100%;
+
+}
+#name-label, #email-label, #job-role-box, #other-job-box{
+    width: 49%;
+}
+/* ================================= T shirt styles ==================================== */
+
+.shirts {
+    padding: 15px;
+    width: 100%;
 }
 .shirt-div-box {
     display: flex;
@@ -391,30 +407,16 @@ button:hover {
         margin: 0px 0 100px 15px;
    }
    /* ================================= 768px - Basic info and t shirt section styles ==================================== */
-    .basic-info-and-shirt-box {
+    .basic-info-box {
         position: relative;
         padding: 15px;
+        
    }
-    .basic-info-and-shirt-box fieldset {
+    .basic-info-box fieldset {
         margin: 10px 0;
    }
-    .other-job-role {
-        position: absolute;
-        right: 15px;
-        bottom: 22px;
-        max-width: calc(48% - 6px);
-        margin: 8px auto;
-   }
-    .basic-info{
-        padding: 0;
-        width: 49%;
-        margin: 8px auto;
-   }
-    .shirts {
-        padding: 0;
-        width: 49%;
-        margin: 8px auto;
-   }
+
+
    /* ================================= 768px - Activity section styles ==================================== */
     .activities {
         padding-bottom: 10px;
