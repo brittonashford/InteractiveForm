@@ -158,7 +158,6 @@ button:hover {
     text-shadow: 1px 1px 0 rgb(25, 25, 25, 0.9);
     background: #33466a;
     border: 1px solid #001845;
-    /* box-shadow: 1px 1px 10px #99a3b5 inset, 3px 3px 10px rgba(50, 50, 50, 0.3); */
 }
 .hint {
     display: none;
@@ -231,11 +230,11 @@ button:hover {
 .basic-info{
     padding: 0;
     width: 100%;
-
 }
 #name-label, #email-label, #job-role-box, #other-job-box{
-    width: 49%;
+    width: 100%;
 }
+
 /* ================================= T shirt styles ==================================== */
 
 .shirts {
@@ -415,7 +414,9 @@ button:hover {
     .basic-info-box fieldset {
         margin: 10px 0;
    }
-
+   #name-label, #email-label, #job-role-box, #other-job-box{
+    width: 49%;
+}
 
    /* ================================= 768px - Activity section styles ==================================== */
     .activities {
