@@ -1,5 +1,5 @@
 # InteractiveForm
-
-Demonstrates data validation using RegEx, and real-time updates based on user input, adherence to accessibility standards, and responsive formatting.
+Technologies: Vanilla JS, CSS3, HTML5
+Demonstrates: data validation using RegEx, real-time updates based on user input, adherence to accessibility standards, and responsive formatting.
 
 Live Link: https://brittonashford.github.io/InteractiveForm/
